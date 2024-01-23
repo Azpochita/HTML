@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="quizApp.css">
+    <title>Interactive Quiz</title>
+</head>
+
+<body>
+    <script src="quizLogic.js"></script>
+    <div class="quiz-container">
+        <h1 class="title">Interactive Quiz</h1>
+
+        <div class="question-container">
+            <!-- Display current question and multiple-choice answers here -->
+            <p class="question">What is the capital of France?</p>
+            <ul class="choices">
+                <li>A. Berlin</li>
+                <li>B. Madrid</li>
+                <li>C. Paris</li>
+                <li>D. Rome</li>
+            </ul>
+        </div>
+
+        <div class="navigation-container">
+            <button class="btn" id="prevBtn">Previous</button>
+            <button class="btn" id="nextBtn">Next</button>
+            <button class="btn" id="submitBtn">Submit</button>
+        </div>
+
+        <div class="results-container" id="resultsContainer">
+            <!-- Hidden by default, will display user's score and correct answers after submission -->
+            <p>Your Score: <span id="userScore">0</span></p>
+            <p>Correct Answers: <span id="correctAnswers">0</span></p>
+        </div>
+    </div>
+</body>
+
+</html>
