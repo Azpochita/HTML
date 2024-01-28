@@ -2,25 +2,23 @@ document.addEventListener("DOMContentLoaded", function () {
     // Predefined set of questions and answers
     const quizData = [
         {
-            question: "What is the capital of France?",
-            choices: ["Berlin", "Madrid", "Paris", "Rome"],
-            correctAnswer: "Paris",
+            question: "Who wrote the play: Romeo and Juliet?",
+            choices: ["William Shakespeare", "Charles Dickens", 
+            "Jane Austen", "Mark Twain"],
+            correctAnswer: "William Shakespeare",
         },
         {
-            question: "Joe Biden is the president of what country?",
-            choices: ["USA", "Canada", "Brazil", "Mexico"],
-            correctAnswer: "USA",
+            question: "Which animated film was made by a Japanese Studio",
+            choices: ["The Iron Giant", "Spirited Away", "The Lion King", 
+            "Spider-Man: Into The Spider-Verse"],
+            correctAnswer: "Spirited Away",
         },
         {
-            question: "What is the capital of France?",
-            choices: ["Berlin", "Madrid", "Paris", "Rome"],
-            correctAnswer: "Paris",
+            question: "What is the chemical symbol for gold?",
+            choices: ["Gd", "Au", "Fe", "Ag"],
+            correctAnswer: "Au",
         },
-        {
-            question: "What is the capital of France?",
-            choices: ["Berlin", "Madrid", "Paris", "Rome"],
-            correctAnswer: "Paris",
-        },
+        
     ];
 
     // Variables to track quiz progress
@@ -30,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // DOM elements
     const questionElement = document.querySelector(".question");
     const choicesList = document.querySelector(".choices");
-    const prevBtn = document.getElementById("prevBtn");
+    const backBtn = document.getElementById("backBtn");
     const nextBtn = document.getElementById("nextBtn");
     const submitBtn = document.getElementById("submitBtn");
     const resultsContainer = document.getElementById("resultsContainer");
@@ -53,8 +51,6 @@ document.addEventListener("DOMContentLoaded", function () {
     function displayQuestion() {
         const currentQuestion = quizData[currentQuestionIndex];
         questionElement.textContent = currentQuestion.question;
-
-        // Clear previous choices
         choicesList.innerHTML = "";
 
         // Display choices
@@ -74,13 +70,10 @@ document.addEventListener("DOMContentLoaded", function () {
         userAnswers[currentQuestionIndex] = answerIndex;
         highlightUserAnswer();
     }
-
-    // Event listeners for navigation buttons
-    prevBtn.addEventListener("click", () => navigate(-1));
+    backBtn.addEventListener("click", () => navigate(-1));
     nextBtn.addEventListener("click", () => navigate(1));
     submitBtn.addEventListener("click", submitQuiz);
 
-    // Navigate to the previous or next question
     function navigate(direction) {
         const newIndex = currentQuestionIndex + direction;
         if (newIndex >= 0 && newIndex < quizData.length) {
